@@ -1,0 +1,24 @@
+{% extends "web/base.html" %}
+
+{% block header %}
+  <h1>主题</h1>
+{% endblock header %}
+
+{% block content %}
+
+<p>主题</p>
+<ul>
+{% for topic in topics %}
+  <li>
+    <h3>
+        <a href="{% url 'web:topic' topic.id %}">{{ topic }}</a>
+    </h3>
+  </li>
+{% empty %}
+  <li>还没有添加主题。</li>
+{% endfor %}
+</ul>
+
+<h3><a href="{% url 'web:new_topic' %}">添加新主题</a></h3>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+
+<!-- 此处细节错误：topic.id 错写为 topic_id -->
+<p><a href="{% url 'web:topic' topic.id %}">{{ topic }}</a></p>
+
+<p>添加新条目：</p>
+<form action="{% url 'web:new_entry' topic.id %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">添加</button>
+</form>
+
+{% endblock content %}

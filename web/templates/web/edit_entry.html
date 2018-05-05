@@ -1,0 +1,15 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'web:topic' topic.id %}">{{topic}}</a></p>
+
+  <p>编辑条目：</p>
+
+  <form action="{% url 'web:edit_entry' entry.id %}" method="POST">
+      {%csrf_token%}
+      {{form.as_p}}
+      <button name="submit">保存更改</button>
+  </form>
+
+{% endblock content %}

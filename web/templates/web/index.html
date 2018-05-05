@@ -1,0 +1,17 @@
+{% extends "web/base.html" %}
+
+{% block header %}
+  <div class="jumbotron">
+      <h1>记录你的学习</h1>
+  </div>
+{% endblock header %}
+
+{% block content %}
+  <h2>
+      <a href="{% url 'users:register' %}">注册一个账号</a>来记录
+      你的学习日志，并列出你正在学习的主题。
+  </h2>
+  <h2>
+      当你学习关于一个主题的新内容时，添加一个总结条目。
+  </h2>
+{% endblock content %}
